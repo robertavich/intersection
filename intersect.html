@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Intersection</title>
+    <style>
+        html,body{
+            margin:0;
+            width:100%;
+            height:100%;
+            background-color:orange;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            flex-direction:column;
+        }
+        p{
+            margin:0;
+        }
+        .container{
+            width:500px;
+            height:500px;
+        }
+        .i-one{
+            width:300px;
+            height:200px;
+            float:left;
+            position:absolute;
+     
+        }
+        .i-two{
+            width:300px;
+            height:200px;
+            position:relative;
+            float:right;
+
+        }
+        .circle1{
+            width:200px;
+            height:100%;
+            border-radius:50%;
+            background-color:rgba(242, 38, 19, 1);
+            transition: all .5s ease;
+        }
+        .circle2{
+            width:200px;
+            height:100%;
+            border-radius:50%;
+            float:right;
+            transition: all .5s ease;
+            background-color:rgba(240, 255, 0,0.8);
+        }
+       
+      
+        .circle-names{
+            width:500px;
+            padding-top:10px;
+            padding-bottom:10px;
+            display:inline-block;
+        }
+        .circle-i-title{
+            width:500px;
+            display:none;
+            padding-top:10px;
+            padding-bottom:10px;
+            text-align:center;
+        }
+        .cname1{
+            width:calc(50% - 50px);
+            float:left;
+            text-align:center;
+        }
+        .cname2{
+            width:calc(50% - 50px);
+            float:right;
+            text-align:center;
+        }
+        .c1{
+            transform: translate(50%,0);
+        }
+        .c2{
+            transform: translate(-50%,0);
+        }
+        .intersect-btn{
+            margin-top:20px;
+            width:150px;
+            height:45px;
+            outline:none;
+            border:none;
+            border-radius:5px;
+            color:white;
+            font-size:16px;
+            cursor:pointer;
+            background-color:#02386e;
+        }
+        .button-wrap{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="circle-wrap">
+            <div class="i-one">
+                <div class="circle1"></div>
+            </div>
+            <div class="i-two">
+                <div class="circle2"></div>
+            </div>
+        </div>
+        <div class="circle-names">
+            <div class="cname1"><p class="cn1">Circle 1</p></div>
+            <div class="cname2"><p class="cn2">Cirlce 2</p></div>
+        </div>
+        <div class="circle-i-title">
+            <p>Intersection</p>
+        </div>
+        <div class="button-wrap">
+            <button class="intersect-btn">Intersection</button>
+        </div>
+    </div>
+    
+   
+    <script>
+        var toggle = 1;
+        
+        document.getElementsByClassName("intersect-btn")[0].addEventListener("click",function(event){  
+            // document.getElementsByClassName("circle1")[0].style.cssFloat = "right";
+            // document.getElementsByClassName("circle2")[0].style.cssFloat = "left";
+            document.getElementsByClassName("circle1")[0].classList.add("c1");
+            document.getElementsByClassName("circle2")[0].classList.add("c2");
+            document.getElementsByClassName("intersect-btn")[0].style.display = "none";
+            document.getElementsByClassName("circle-names")[0].style.display = "none";
+            document.getElementsByClassName("circle-i-title")[0].style.display = "inline-block";
+           
+        });
+
+    </script>
+</body>
+</html>
